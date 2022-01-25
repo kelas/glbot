@@ -1,0 +1,29 @@
+{
+  "name": "glbot",
+  "version": "1.0.0",
+  "description": "simple gitlab api echo example",
+  "main": "index.js",
+  "dependencies": {
+    "gitlab-webhook-events": "^1.0.7",
+    "@gitbeaker/node": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kelas/glbot.git"
+  },
+  "keywords": [
+    "gitlab",
+    "api",
+    "echo"
+  ],
+  "author": "kelas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kelas/glbot/issues"
+  },
+  "homepage": "https://github.com/kelas/glbot#readme"
+}
