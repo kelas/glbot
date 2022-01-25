@@ -29,7 +29,7 @@ handler.on('note', function (event) {
       var p = event.payload,
           oa = p.object_attributes
 
-      if(p.user.name === 'glbot' || !p.issue)
+      if(p.user.name === BOT_NAME || !p.issue)
         break
 
       var reply = p.user.name + ' says: "' + oa.note + '"';
