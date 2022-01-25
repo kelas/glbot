@@ -5,7 +5,7 @@ var http = require('http'),
 var GITLAB_HOST    = 'https://*****.westeurope.cloudapp.azure.com',
     WEBHOOK_SECRET = '*****',
     API_TOKEN      = '*****',
-    BOT_NAME       = 'glbot',
+    BOT_NAME       = 'glbot',  //!< to prevent self-echo
     HTTP_PORT      = 7777
 
 var handler = createHandler({ path: '/glbot', secret: WEBHOOK_SECRET }),
