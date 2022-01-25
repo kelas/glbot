@@ -6,9 +6,10 @@ var GITLAB_HOST    = 'https://*****.westeurope.cloudapp.azure.com',
     WEBHOOK_SECRET = '*****',
     API_TOKEN      = '*****',
     BOT_NAME       = 'glbot',  //!< to prevent self-echo
+    HTTP_PATH      = '/glbot',
     HTTP_PORT      = 7777
 
-var handler = createHandler({ path: '/glbot', secret: WEBHOOK_SECRET }),
+var handler = createHandler({ path: HTTP_PATH, secret: WEBHOOK_SECRET }),
     api = new gl.Gitlab({ host: GITLAB_HOST, token: API_TOKEN });
 
 http.createServer((req, res) => {
@@ -24,7 +25,7 @@ handler.on('error', (err) => {
 
 handler.on('note', (event) => {
   switch (event.path) {
-    case '/glbot':
+    case HTTP_PATH:
 
       var p = event.payload,
           oa = p.object_attributes
