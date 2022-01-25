@@ -28,7 +28,7 @@ handler.on('note', (event) => {
     case HTTP_PATH:
 
       var p = event.payload,
-          oa = p.object_attributes
+          oa = p.object_attributes;
 
       if(p.user.name === BOT_NAME || !p.issue)
         break
@@ -40,7 +40,7 @@ handler.on('note', (event) => {
         oa.noteable_id,
         reply)
       .then((res) => {console.log(res.body)})
-      .catch((e) => {console.error('ERR:', e.description)})
+      .catch((e) => {console.error('ERR:', e.description)});
 
       break
 
