@@ -8,8 +8,8 @@ var GITLAB_HOST    = 'https://*****.westeurope.cloudapp.azure.com',
     BOT_NAME       = 'glbot',
     HTTP_PORT      = 7777
 
-var handler = createHandler({ path: '/glbot', secret: WEBHOOK_SECRET })
-var api = new gl.Gitlab({ host: GITLAB_HOST, token: API_TOKEN });
+var handler = createHandler({ path: '/glbot', secret: WEBHOOK_SECRET }),
+    api = new gl.Gitlab({ host: GITLAB_HOST, token: API_TOKEN });
 
 http.createServer((req, res) => {
   handler(req, res, (err) => {
@@ -18,11 +18,11 @@ http.createServer((req, res) => {
   })
 }).listen(HTTP_PORT);
 
-handler.on('error', function (err) {
+handler.on('error', (err) => {
   console.error('ERR:', err.message)
 });
 
-handler.on('note', function (event) {
+handler.on('note', (event) => {
   switch (event.path) {
     case '/glbot':
 
